@@ -14,14 +14,12 @@
             {% for question in latest_detail %}
             
                 <p class="lead">{{question.question_text}}</p>
-                
+                <a href="{% url 'polls:details' question.id %}" class="btn btn-primary btn-sm">Vote Now</a>
+                <a href="{% url 'polls:result' question.id %}" class="btn btn-primary btn-sm">Results</a>
             {% endfor %}
         {% else %}
             <p>not having a questions</p>
         {% endif %}
     {% endblock content %}
-
-
-
 </body>
 </html> 
